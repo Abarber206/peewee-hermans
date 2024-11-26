@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peewee Herman Card Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Peewee Herman Card Game</h1>
+        <div id="menu-screen" class="screen">
+            <button onclick="createGame()" class="menu-button">Create Game</button>
+            <button onclick="showJoinScreen()" class="menu-button">Join Game</button>
+        </div>
+        
+        <div id="join-screen" class="screen hidden">
+            <input type="text" id="game-code" placeholder="Enter Game Code">
+            <button onclick="joinGame()" class="menu-button">Join</button>
+            <button onclick="showMenuScreen()" class="menu-button">Back</button>
+        </div>
+
+        <div id="waiting-screen" class="screen hidden">
+            <h2>Waiting for Player...</h2>
+            <p>Game Code: <span id="current-game-code">XXXX</span></p>
+            <button onclick="cancelGame()" class="menu-button">Cancel</button>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
